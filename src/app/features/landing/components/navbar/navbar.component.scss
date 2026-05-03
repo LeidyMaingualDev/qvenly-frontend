@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: relative;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 35px;
+    }
+
+    span {
+      color: #00c9a7;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+
+      &:hover {
+        color: #00c9a7;
+      }
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__toggle {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
+
+/* BOTONES */
+.btn {
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+
+  &-outline {
+    border: 1px solid #00c9a7;
+    background: transparent;
+    color: #00c9a7;
+  }
+
+  &-primary {
+    background: #00c9a7;
+    color: white;
+  }
+}
+
+/* BOTONES en menú móvil */
+.menu__buttons {
+  display: none;
+}
+
+/* RESPONSIVE* /
+
+/* Móvil */
+@media (max-width: 575px) {
+
+  .navbar {
+
+    &__toggle {
+      display: block;
+    }
+
+    &__menu {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 20px 0;
+
+      &.active {
+        display: flex;
+      }
+    }
+
+    &__buttons {
+      display: none;
+    }
+  }
+
+  .menu__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+
+    .btn {
+      width: 80%;
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+
+    &__menu {
+      gap: 15px;
+    }
+
+    &__logo {
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/* Escritorio pequeño */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar__menu {
+    gap: 20px;
+  }
+}
+
+/* Portátiles */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    padding: 15px 40px;
+  }
+}
+
+/* Escritorios grandes */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 20px 80px;
+
+    &__menu a {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Extra grandes */
+@media (min-width: 1400px) {
+  .navbar {
+    padding: 20px 120px;
+  }
+}
