@@ -1,0 +1,35 @@
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="navbar__logo">
+    <img src="assets/images/logoQvenly.png" alt="Qvenly logo">
+    <span>Qvenly</span>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <div class="navbar__toggle" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- Menú -->
+  <ul class="navbar__menu" [class.active]="isMenuOpen">
+    <li><a href="#inicio" (click)="closeMenu()">Inicio</a></li>
+    <li><a href="#caracteristicas" (click)="closeMenu()">Características</a></li>
+    <li><a href="#tipos" (click)="closeMenu()">Tipos</a></li>
+    <li><a href="#planes" (click)="closeMenu()">Planes</a></li>
+    <li><a href="#ayuda" (click)="closeMenu()">Ayuda</a></li>
+
+    <!-- BOTONES EN MÓVIL -->
+    <li class="menu__buttons">
+      <a routerLink="/auth/login" class="btn btn-outline" (click)="closeMenu()">Iniciar Sesión</a>
+      <a routerLink="/auth/register" class="btn btn-primary" (click)="closeMenu()">Registrarse</a>
+    </li>
+  </ul>
+
+  <!-- BOTONES EN DESKTOP -->
+  <div class="navbar__buttons">
+    <a routerLink="/auth/login" class="btn btn-outline">Iniciar Sesión</a>
+    <a routerLink="/auth/register" class="btn btn-primary">Registrarse</a>
+  </div>
+
+</nav>
